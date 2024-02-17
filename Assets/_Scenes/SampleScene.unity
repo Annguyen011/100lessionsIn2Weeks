@@ -409,6 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 632629552}
+  - component: {fileID: 632629553}
   m_Layer: 0
   m_Name: Asteroids_1
   m_TagString: Untagged
@@ -431,9 +432,23 @@ Transform:
   - {fileID: 1047346631}
   - {fileID: 1505550445}
   - {fileID: 1501195013}
+  - {fileID: 896018295}
   m_Father: {fileID: 94923666}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632629553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632629551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e90106e7b73c34c8b3f281e3e622d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 1047346631}
 --- !u!1 &740775007
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +736,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d449f4e1fcee94e91ad0a0b60c1fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
+  points:
+  - {fileID: 509810206}
+  - {fileID: 1642157558}
+  - {fileID: 878388759}
+  - {fileID: 562043676}
 --- !u!1 &878388758
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +772,52 @@ Transform:
   m_Father: {fileID: 854506481}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &896018294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896018295}
+  - component: {fileID: 896018296}
+  m_Layer: 0
+  m_Name: JunkRotate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896018295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896018294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 632629552}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &896018296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896018294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a734bf8296059004cac0302268fba3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  junkCtrl: {fileID: 632629553}
+  rotationSpeed: 3
 --- !u!1 &1047346630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,6 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505550445}
   - component: {fileID: 1505550446}
+  - component: {fileID: 1505550447}
   m_Layer: 0
   m_Name: JunkFly
   m_TagString: Untagged
@@ -1125,8 +1191,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe496b580925304daf9c65e4e765c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 2
   direction: {x: 1, y: 0, z: 0}
+--- !u!114 &1505550447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505550444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111340d95f892944fb9ea2d49a075a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 7
 --- !u!1 &1537446333
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,6 @@ public class JunkFly : SaiMonoBehaviour
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.parent.rotation = Quaternion.Euler(0,0,rotZ);
 
-        Debug.DrawLine(parentPos, parentPos + diff * 7, Color.red);
+        Debug.DrawLine(parentPos, parentPos + diff * 7, Color.red, 10f);
     }
 }
