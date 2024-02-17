@@ -6,7 +6,7 @@ public class DeSpawnerByDistance : DeSpawner
 {
     [SerializeField] protected float distance;
 
-    protected override bool CanDeSpawn()
+    public override bool CanDeSpawn()
     {
         return Vector2.Distance(transform.parent.position, Camera.main.transform.position) > distance;
     }

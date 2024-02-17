@@ -20,5 +20,5 @@ public abstract class DeSpawner : SaiMonoBehaviour
         Destroy(transform.parent.gameObject);
     }
 
-    protected abstract bool CanDeSpawn();
+    public abstract bool CanDeSpawn();
 }
