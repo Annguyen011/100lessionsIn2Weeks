@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17033357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17033358}
+  - component: {fileID: 17033359}
+  m_Layer: 0
+  m_Name: BulletDeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &17033358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17033357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681323260}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17033359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17033357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17827710cda2f5a4ab698f4190ce75ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 30
 --- !u!1 &134518347
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,10 +583,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fefed5164a2912498fc47802ba18d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolsCount: 5
   prefabs:
   - {fileID: 1681323260}
+  pools: []
   holder: {fileID: 740775008}
-  BULLET_1: 
 --- !u!1 &1478722421
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +697,7 @@ Transform:
   m_Children:
   - {fileID: 839660829}
   - {fileID: 134518348}
+  - {fileID: 17033358}
   m_Father: {fileID: 744845328}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
