@@ -19,12 +19,8 @@ public class JunkSpawnerRandom : SaiMonoBehaviour
         //JunkSpawning();
     }
 
-    private void JunkSpawning()
-    {
-        Transform junk = JunkSpawner.Instance.Spawn(JunkSpawner.Junk_1, transform.position, transform.rotation);
-        junk.gameObject.SetActive(true);
-        Invoke(nameof(JunkSpawning), 1f);
-    }
+
+
 
     protected override void LoadComponents()
     {
@@ -40,5 +36,11 @@ public class JunkSpawnerRandom : SaiMonoBehaviour
         }
     }
 
-
+    private void JunkSpawning()
+    {
+        Transform ranPos = junkSpawnerCtrl.JunkSpawnPoints.GetRandom();
+        Transform junk = JunkSpawner.Instance.Spawn(JunkSpawner.Junk_1, ranPos.position, transform.rotation);
+        junk.gameObject.SetActive(true);
+        Invoke(nameof(JunkSpawning), 1f);
+    }
 }
