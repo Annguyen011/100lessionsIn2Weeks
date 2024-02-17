@@ -12,12 +12,20 @@ public class ShipShooting : MonoBehaviour
     private void FixedUpdate()
     {
         this.Shooting();
+        this.IsShooting();
+    }
+
+    private bool IsShooting()
+    {
+        return isShooting = InputManager.Instance.OnFiring == 1;
     }
 
     private void Shooting()
     {
         if (!this.isShooting) return;
-        
-        Instantiate(bullet);
+        Vector3 spawnPosition = transform.position;
+        Quaternion spawnRot = transform.parent.rotation;
+
+        Instantiate(bullet, spawnPosition, spawnRot);
     }
 }
