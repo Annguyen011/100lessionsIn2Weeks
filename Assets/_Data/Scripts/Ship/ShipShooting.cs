@@ -31,11 +31,12 @@ public class ShipShooting : MonoBehaviour
         shootTimer += Time.fixedDeltaTime;
 
         if (!this.isShooting && shootTimer < shootDelay) return;
-        
+
         shootTimer = 0;
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRot = transform.parent.rotation;
 
-        Instantiate(bullet, spawnPosition, spawnRot);
+        Transform newBullet = Instantiate(bullet, spawnPosition, spawnRot);
+        newBullet.gameObject.SetActive(true);
     }
 }
