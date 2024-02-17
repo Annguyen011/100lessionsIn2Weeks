@@ -49,6 +49,8 @@ public abstract class Spawner : SaiMonoBehaviour
 
         Transform prefab = Instantiate(newPrefab, pos, rot);
 
+        prefab.parent = holder;
+
         return prefab;
     }
 
