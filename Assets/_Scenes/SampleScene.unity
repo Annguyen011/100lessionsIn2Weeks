@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe496b580925304daf9c65e4e765c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   direction: {x: 1, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1681323260}
+  shootDelay: 0.2
 --- !u!1 &2046950973
 GameObject:
   m_ObjectHideFlags: 0

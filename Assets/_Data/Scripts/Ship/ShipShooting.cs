@@ -6,13 +6,19 @@ using UnityEngine;
 public class ShipShooting : MonoBehaviour
 {
     [SerializeField] protected Transform bullet;
+    [SerializeField] protected float shootDelay = .2f;
 
+    protected float shootTimer;
     protected bool isShooting;
+
+    private void Update()
+    {
+        this.IsShooting();
+    }
 
     private void FixedUpdate()
     {
         this.Shooting();
-        this.IsShooting();
     }
 
     private bool IsShooting()
@@ -22,7 +28,11 @@ public class ShipShooting : MonoBehaviour
 
     private void Shooting()
     {
-        if (!this.isShooting) return;
+        shootTimer += Time.fixedDeltaTime;
+
+        if (!this.isShooting && shootTimer < shootDelay) return;
+        
+        shootTimer = 0;
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRot = transform.parent.rotation;
 
