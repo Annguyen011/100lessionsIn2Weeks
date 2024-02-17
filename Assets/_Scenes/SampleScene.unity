@@ -434,8 +434,8 @@ Transform:
   m_GameObject: {fileID: 1224998659}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1478722423}
   m_RootOrder: -1
@@ -664,6 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937400195}
   - component: {fileID: 1937400196}
+  - component: {fileID: 1937400197}
   m_Layer: 0
   m_Name: ShipShoting
   m_TagString: Untagged
@@ -699,6 +700,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 0.2
+--- !u!114 &1937400197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937400194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b4fd9d2be54764f834f0644a0150ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeScale: 0.9
 --- !u!1 &2046950973
 GameObject:
   m_ObjectHideFlags: 0

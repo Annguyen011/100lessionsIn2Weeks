@@ -30,18 +30,30 @@ public abstract class Spawner : SaiMonoBehaviour
     {
         if (prefabs.Count > 0) return;
 
-        foreach (Transform prefab in transform.GetChild(0)) 
+        foreach (Transform prefab in transform.GetChild(0))
         {
             prefabs.Add(prefab);
             prefab.gameObject.SetActive(false);
         }
     }
 
-    public virtual Transform Spawn(Vector3 pos, Quaternion rot)
+    public virtual Transform Spawn(string name, Vector3 pos, Quaternion rot)
     {
-        Transform newPrefab = prefabs[0];
+        Transform newPrefab = GetPrefabByName(name);
+
+        if (newPrefab == null)
+        {
+            Debug.LogWarning("Khong tim thay prefab" + name);
+            return null;
+        }
+
         Transform prefab = Instantiate(newPrefab, pos, rot);
 
         return prefab;
+    }
+
+    public virtual Transform GetPrefabByName(string name)
+    {
+        return prefabs.Find(transform => transform.name == name);
     }
 }
