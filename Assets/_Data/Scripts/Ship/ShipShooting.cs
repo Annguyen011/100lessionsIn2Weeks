@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ShipShooting : MonoBehaviour
 {
-    [SerializeField] protected Transform bullet;
     [SerializeField] protected float shootDelay = .2f;
 
     protected float shootTimer;
@@ -36,7 +35,7 @@ public class ShipShooting : MonoBehaviour
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRot = transform.parent.rotation;
 
-        Transform newBullet = Instantiate(bullet, spawnPosition, spawnRot);
+        Transform newBullet = BulletSpawner.Instance.Spawn(spawnPosition, spawnRot);
         newBullet.gameObject.SetActive(true);
     }
 }

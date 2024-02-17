@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : SaiMonoBehaviour
+public abstract class Spawner : SaiMonoBehaviour
 {
     [SerializeField] protected List<Transform> prefabs = new List<Transform>();
     [SerializeField] protected Transform holder;
@@ -35,5 +35,13 @@ public class Spawner : SaiMonoBehaviour
             prefabs.Add(prefab);
             prefab.gameObject.SetActive(false);
         }
+    }
+
+    public virtual Transform Spawn(Vector3 pos, Quaternion rot)
+    {
+        Transform newPrefab = prefabs[0];
+        Transform prefab = Instantiate(newPrefab, pos, rot);
+
+        return prefab;
     }
 }
