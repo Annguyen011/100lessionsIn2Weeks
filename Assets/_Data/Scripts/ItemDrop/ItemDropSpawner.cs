@@ -12,4 +12,11 @@ public class ItemDropSpawner : Spawner
 
         base.Awake();
     }
+
+    public void Drop(List<DropRate> dropList, Vector3 pos, Quaternion rot)
+    {
+        ItemCode itemCode = dropList[0].itemSO.itemCode;
+        Transform itemDrop = Spawn(itemCode.ToString(), pos, rot);
+        itemDrop.gameObject.SetActive(true);
+    }
 }

@@ -38,6 +38,7 @@ public class JunkDamReceiver : DamagerReceiver
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
         //ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
+        ItemDropSpawner.Instance.Drop(junkCtrl.junkSO.dropList, dropPos, dropRot);
     }
 
     protected virtual void OnDeadFX()
