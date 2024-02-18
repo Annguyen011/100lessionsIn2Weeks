@@ -23,8 +23,13 @@ public class JunkDamReceiver : DamagerReceiver
     protected override void OnDead()
     {
         //this.OnDeadFX();
+
+        // Test lession 27
+        Transform fx = FXSpawner.Instance.Spawn("Explore", transform.position, transform.rotation);
+        fx.gameObject.SetActive(true);
         //this.OnDeadDrop();
         this.junkCtrl.despawner.DespawnObject();
+
 
     }
 

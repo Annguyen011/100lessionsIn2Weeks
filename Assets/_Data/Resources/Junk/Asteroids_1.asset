@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Asteroids_1
   m_EditorClassIdentifier: 
   junkName: Junk
-  hpMax: 1
+  hpMax: 3
