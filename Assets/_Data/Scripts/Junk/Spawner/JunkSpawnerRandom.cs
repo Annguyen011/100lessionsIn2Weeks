@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class JunkSpawnerRandom : SaiMonoBehaviour
 {
-    [SerializeField] private JunkSpawnerCtrl junkSpawnerCtrl;
+    [SerializeField] private float timerDelay = 2f;
 
+    private JunkSpawnerCtrl junkSpawnerCtrl;
+
+    private float timer;
 
     protected override void Start()
     {
         base.Start();
-        JunkSpawning();
     }
 
     private void FixedUpdate()
     {
-        //JunkSpawning();
+        JunkSpawning();
     }
-
-
-
 
     protected override void LoadComponents()
     {
@@ -38,9 +37,13 @@ public class JunkSpawnerRandom : SaiMonoBehaviour
 
     private void JunkSpawning()
     {
+        timer += Time.fixedDeltaTime;
+        if (timer < timerDelay) return;
+
+        timer = 0;
+
         Transform ranPos = junkSpawnerCtrl.JunkSpawnPoints.GetRandom();
-        Transform junk = JunkSpawner.Instance.Spawn(JunkSpawner.Junk_1, ranPos.position, transform.rotation);
+        Transform junk = JunkSpawner.Instance.Spawn(JunkSpawner.Instance.RandomPrefab(), ranPos.position, transform.rotation);
         junk.gameObject.SetActive(true);
-        Invoke(nameof(JunkSpawning), 1f);
     }
 }
