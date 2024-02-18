@@ -22,35 +22,35 @@ public class JunkDamReceiver : DamagerReceiver
 
     protected override void OnDead()
     {
-        //this.OnDeadFX();
+        this.OnDeadFX();
 
         // Test lession 27
-        Transform fx = FXSpawner.Instance.Spawn("Explore", transform.position, transform.rotation);
-        fx.gameObject.SetActive(true);
-        //this.OnDeadDrop();
+        //Transform fx = FXSpawner.Instance.Spawn("Explore", transform.position, transform.rotation);
+        //fx.gameObject.SetActive(true);
+        this.OnDeadDrop();
         this.junkCtrl.despawner.DespawnObject();
 
 
     }
 
-    //protected virtual void OnDeadDrop()
-    //{
-    //    Vector3 dropPos = transform.position;
-    //    Quaternion dropRot = transform.rotation;
-    //    ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
-    //}
+    protected virtual void OnDeadDrop()
+    {
+        Vector3 dropPos = transform.position;
+        Quaternion dropRot = transform.rotation;
+        //ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, dropPos, dropRot);
+    }
 
-    //protected virtual void OnDeadFX()
-    //{
-    //    string fxName = this.GetOnDeadFXName();
-    //    Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
-    //    fxOnDead.gameObject.SetActive(true);
-    //}
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+    }
 
-    //protected virtual string GetOnDeadFXName()
-    //{
-    //    return FXSpawner.smoke1;
-    //}
+    protected virtual string GetOnDeadFXName()
+    {
+        return FXSpawner.smoke1;
+    }
 
     //public override void Reborn()
     //{
