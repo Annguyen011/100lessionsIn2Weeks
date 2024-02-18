@@ -9,6 +9,20 @@ public class DamageSender : SaiMonoBehaviour
         DamagerReceiver damageReceiver = obj.GetComponentInChildren<DamagerReceiver>();
         if (damageReceiver == null) return;
         this.Send(damageReceiver);
+        CreateImpactFX();
+    }
+
+    protected void CreateImpactFX()
+    {
+        string fxName = GetImpactName();
+
+        Transform fx = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fx.gameObject.SetActive(true);
+    }
+
+    protected string GetImpactName()
+    {
+        return FXSpawner.impact1;
     }
 
     public virtual void Send(DamagerReceiver damageReceiver)
