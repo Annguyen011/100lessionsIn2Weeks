@@ -46,9 +46,8 @@ public class ShipShooting : MonoBehaviour
 
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.BULLET_1,spawnPosition, spawnRot);
         newBullet.gameObject.SetActive(true);
-
+        newBullet.GetComponent<BulletController>().SetShooter(newBullet);
         changeScale.StopChange(shootDelay);
     }
-
 
 }

@@ -8,6 +8,7 @@ public class BulletController : SaiMonoBehaviour
     public BulletDeSpawner deSpawner;
     public BulletDmgSender sender;
     public Transform model;
+    public Transform shooter;
 
     protected override void LoadComponents()
     {
@@ -32,5 +33,10 @@ public class BulletController : SaiMonoBehaviour
         {
             deSpawner = GetComponentInChildren<BulletDeSpawner>();
         }
+    }
+
+    public void SetShooter(Transform shooter)
+    {
+        this.shooter = shooter;
     }
 }

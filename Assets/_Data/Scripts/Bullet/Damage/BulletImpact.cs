@@ -51,6 +51,8 @@ public class BulletImpact : BulletAbstract
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.transform.parent.name == controller.shooter.name) return;
+
         controller.sender.Send(other.transform);
         CreateImpactFX(other);
     }
