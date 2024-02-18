@@ -5,6 +5,7 @@ using UnityEngine;
 public class JunkCtrl : SaiMonoBehaviour
 {
     public Transform model;
+    public JunkDespawner despawner;
 
     protected override void LoadComponents()
     {
@@ -12,6 +13,11 @@ public class JunkCtrl : SaiMonoBehaviour
         if(model == null)
         {
             model = transform.Find("Model");
+        }
+
+        if(despawner == null)
+        {
+            despawner = GetComponentInChildren<JunkDespawner>();
         }
     }
 }

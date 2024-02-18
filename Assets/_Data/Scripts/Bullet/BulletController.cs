@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : SaiMonoBehaviour
 {
     public BulletImpact impact;
+    public BulletDeSpawner deSpawner;
     public BulletDmgSender sender;
     public Transform model;
 
@@ -12,19 +13,24 @@ public class BulletController : SaiMonoBehaviour
     {
         base.LoadComponents();
 
-        if(impact == null)
+        if (impact == null)
         {
             impact = GetComponentInChildren<BulletImpact>();
         }
 
-        if(sender == null)
+        if (sender == null)
         {
             sender = GetComponentInChildren<BulletDmgSender>();
         }
 
-        if(model == null)
+        if (model == null)
         {
             model = transform.Find("Model");
+        }
+
+        if (deSpawner == null)
+        {
+            deSpawner = GetComponentInChildren<BulletDeSpawner>();
         }
     }
 }
