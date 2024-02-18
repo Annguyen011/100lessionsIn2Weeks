@@ -36,8 +36,24 @@ public class BulletImpact : BulletAbstract
         sphereCollider.radius = radius;
     }
 
+    private void CreateImpactFX(Collider other)
+    {
+        string fxName = GetImpactName();
+
+        Transform fx = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fx.gameObject.SetActive(true);
+    }
+
+    private string GetImpactName()
+    {
+        return FXSpawner.impact1;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         controller.sender.Send(other.transform);
+        CreateImpactFX(other);
     }
+
+
 }
