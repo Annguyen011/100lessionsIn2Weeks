@@ -1079,6 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSlot: 7777
+  maxAddCount: 999
   items: []
 --- !u!1 &786238980
 GameObject:
@@ -1833,7 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c3713feba3f4c49ba3033fb8a0e223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
+  distance: 30
 --- !u!1 &1154382659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,7 +3172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c3713feba3f4c49ba3033fb8a0e223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
+  distance: 30
 --- !u!1 &2002221665
 GameObject:
   m_ObjectHideFlags: 0

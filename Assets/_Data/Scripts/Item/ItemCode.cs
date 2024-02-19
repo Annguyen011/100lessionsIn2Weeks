@@ -6,5 +6,6 @@ public enum ItemCode
 {
     None,
     IronOre,
-    GoldOre
+    GoldOre,
+    CopperSword
 }
