@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c6675c09d64074da6c2fdad9af83dd, type: 3}
   m_Name: GoldOre
   m_EditorClassIdentifier: 
-  itemCode: 1
+  itemCode: 2
   itemName: GoldOre
