@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 [Serializable]
 public class DropRate
 {
-    public ItemSO itemSO;
+    public ItemProfileSO itemSO;
     public int minDrop;
     public int maxDrop;
     [Header("Range")]

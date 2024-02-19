@@ -25,6 +25,27 @@ public class Inventory : SaiMonoBehaviour
         return true;
     }
 
+    //public virtual bool DeductItem(ItemCode itemCode, int deductCount)
+    //{
+    //    ItemInventory itemInventory = GetItemByCode(itemCode);
+
+    //    int newCount = itemInventory.itemCount - deductCount;
+
+    //    if (newCount < 0) return false;
+    //    itemInventory.itemCount = newCount;
+    //    return true;
+    //}
+
+    public virtual bool TryDeductItem(ItemCode itemCode, int deductCount)
+    {
+        ItemInventory itemInventory = GetItemByCode(itemCode);
+
+        int newCount = itemInventory.itemCount - deductCount;
+
+        if (newCount < 0) return false;
+        return true;
+    }
+
     public virtual ItemInventory GetItemByCode(ItemCode itemCode)
     {
         ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemCode);
