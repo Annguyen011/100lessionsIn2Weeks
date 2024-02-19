@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da24b18d9ae59c4eb56b324c3f9fdfb, type: 3}
   m_Name: CopperSword
   m_EditorClassIdentifier: 
-  itemCode: 0
-  itemType: 0
-  itemName: None
+  itemCode: 3
+  itemType: 2
+  itemName: CopperSword
   defaultMaxStack: 7
   canNotSendToInventory: 0
